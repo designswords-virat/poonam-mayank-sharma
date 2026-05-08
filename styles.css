@@ -1261,12 +1261,21 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
 }
 .foot__top {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.4fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1.4fr 1fr;
   gap: clamp(28px, 3vw, 56px);
   max-width: 1600px;
   margin: 0 auto;
   padding-bottom: 56px;
   border-bottom: 1px solid var(--rule-light);
+}
+.foot__sub {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(244, 240, 231, 0.72);
+  margin: 0 0 14px;
+  max-width: 30ch;
 }
 .foot__brand img {
   height: 36px;
