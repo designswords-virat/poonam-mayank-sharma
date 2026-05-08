@@ -96,47 +96,6 @@
   }, { passive: true });
 })();
 
-// ---------- Hero auto-rotate slider ----------
-(function () {
-  var slide = document.getElementById('heroSlide');
-  var dotsHost = document.getElementById('heroDots');
-  if (!slide || !dotsHost) return;
-
-  var images = [
-    'https://poonammayanksharma.co.in/assets/images/slider/poonammayanksharma.jpg',
-    'https://poonammayanksharma.co.in/assets/images/slider/wedding-reception-planning.png',
-    'https://poonammayanksharma.co.in/assets/images/slider/wedding-celebration-planning.webp',
-    'https://poonammayanksharma.co.in/assets/images/slider/planner-for-wedding.jpg',
-    'https://poonammayanksharma.co.in/assets/images/slider/wedding-planner-organiser.jpg',
-    'https://poonammayanksharma.co.in/assets/images/slider/wedding-decor.jpg'
-  ];
-  // Preload
-  images.forEach(function (src) { var i = new Image(); i.src = src; });
-
-  var idx = 0;
-  var dots = dotsHost.querySelectorAll('button');
-  function go(n) {
-    idx = (n + images.length) % images.length;
-    slide.style.opacity = '0';
-    setTimeout(function () {
-      slide.style.backgroundImage = "url('" + images[idx] + "')";
-      slide.style.opacity = '1';
-    }, 400);
-    dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
-  }
-  dots.forEach(function (d) {
-    d.addEventListener('click', function () {
-      go(parseInt(d.getAttribute('data-i'), 10));
-      reset();
-    });
-  });
-
-  var auto = null;
-  function start() { auto = setInterval(function () { go(idx + 1); }, 5500); }
-  function reset() { if (auto) { clearInterval(auto); start(); } }
-  start();
-})();
-
 // ---------- Independent vertical parallax ----------
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
