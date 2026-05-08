@@ -1449,6 +1449,7 @@ button { font: inherit; cursor: pointer; background: none; border: none; }
     padding-bottom: 100px;
     min-height: 600px;
   }
+  .hero__inner { background-image: url('image/hero%20mobile.png') !important; }
   .hero__title { font-size: clamp(38px, 12vw, 60px); line-height: 0.98; }
   .hero__lede { font-size: 14.5px; max-width: 100%; margin: 16px 0 22px; }
   .hero__eyebrow { font-size: 10px; margin-bottom: 16px; }
